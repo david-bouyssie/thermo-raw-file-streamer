@@ -8,6 +8,9 @@ const RAW_FILE_PARSER_DIR: &str = "./resources/rawfileparser";
 #[cfg(target_os = "windows")]
 const MONO_INCLUDE_DIR: &str = r"C:\Program Files\Mono\include\mono-2.0\";
 
+#[cfg(target_os = "linux")]
+const MONO_INCLUDE_DIR: &str = "/usr/include/mono-2.0/";
+
 /*
 #[cfg(target_os = "windows")]
 struct MSVCCompilationPaths {
@@ -121,7 +124,7 @@ pub fn main() {
         if mono_dll_path.exists() == false {
             fs::copy(r"C:\Program Files\Mono\bin\mono-2.0-sgen.dll", mono_dll_path.to_owned()).unwrap();
         }
-        let mono_lib_path = Path::new(&target_dir).join("mono-2.0-sgen.lib");
+        let mono_lib_path = Path::new(&target_dir).join("monosgen-2.0.lib");
         if mono_lib_path.exists() == false {
             fs::copy(r"C:\Program Files\Mono\lib\mono-2.0-sgen.lib", mono_lib_path.to_owned()).unwrap();
         }
@@ -131,7 +134,7 @@ pub fn main() {
         // export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(dirname $(readlink -f $0))/
         let thermo_glue_so_path = Path::new(&target_dir).join("libThermoRawFileParser.so");
         if thermo_glue_so_path.exists() == false {
-            fs::copy(r".\resources\lib\libThermoRawFileParser.so", thermo_glue_so_path.to_owned()).unwrap();
+            fs::copy(r"./resources/lib/libThermoRawFileParser.so", thermo_glue_so_path.to_owned()).unwrap();
         }
     } else {
         panic!("Your OS is not yet supported!")
@@ -141,15 +144,10 @@ pub fn main() {
     if !Path::new(&bindings_path).exists() {
         warn!("Generating new binding code for ThermoRawFileParser.h");
 
-        let mut bindings = bindgen::Builder::default()
+        let bindings = bindgen::Builder::default()
             .header("./resources/bindings/ThermoRawFileParser.h")
-            .parse_callbacks(Box::new(bindgen::CargoCallbacks));
-
-        // Conditionally add the include path only on Windows
-        if cfg!(target_os = "windows") {
-            // FIXME: we should use something more configurable (maybe MONO_HOME env var?)
-            bindings = bindings.clang_arg(format!("-I{}", MONO_INCLUDE_DIR));
-        }
+            .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+            .clang_arg(format!("-I{}", MONO_INCLUDE_DIR));
 
         let bindings = bindings.generate().expect("Unable to generate bindings");
 
@@ -160,5 +158,7 @@ pub fn main() {
 
     // --- Link native shared library (E4K glue code) --- //
     println!("cargo:rustc-link-search=native={}",target_dir);
-    println!("cargo:rustc-link-lib=static=ThermoRawFileParser");
+    if cfg!(target_os = "windows") {
+        println!("cargo:rustc-link-lib=static=ThermoRawFileParser");
+    }
 }

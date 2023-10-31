@@ -384,94 +384,13 @@ pub struct __crt_locale_data_public {
     pub _locale_mb_cur_max: ::std::os::raw::c_int,
     pub _locale_lc_codepage: ::std::os::raw::c_uint,
 }
-#[test]
-fn bindgen_test_layout___crt_locale_data_public() {
-    const UNINIT: ::std::mem::MaybeUninit<__crt_locale_data_public> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__crt_locale_data_public>(),
-        16usize,
-        concat!("Size of: ", stringify!(__crt_locale_data_public))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__crt_locale_data_public>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__crt_locale_data_public))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._locale_pctype) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__crt_locale_data_public),
-            "::",
-            stringify!(_locale_pctype)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._locale_mb_cur_max) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__crt_locale_data_public),
-            "::",
-            stringify!(_locale_mb_cur_max)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._locale_lc_codepage) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__crt_locale_data_public),
-            "::",
-            stringify!(_locale_lc_codepage)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __crt_locale_pointers {
     pub locinfo: *mut __crt_locale_data,
     pub mbcinfo: *mut __crt_multibyte_data,
 }
-#[test]
-fn bindgen_test_layout___crt_locale_pointers() {
-    const UNINIT: ::std::mem::MaybeUninit<__crt_locale_pointers> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<__crt_locale_pointers>(),
-        16usize,
-        concat!("Size of: ", stringify!(__crt_locale_pointers))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<__crt_locale_pointers>(),
-        8usize,
-        concat!("Alignment of ", stringify!(__crt_locale_pointers))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).locinfo) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__crt_locale_pointers),
-            "::",
-            stringify!(locinfo)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).mbcinfo) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(__crt_locale_pointers),
-            "::",
-            stringify!(mbcinfo)
-        )
-    );
-}
+
 pub type _locale_t = *mut __crt_locale_pointers;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -479,51 +398,6 @@ pub struct _Mbstatet {
     pub _Wchar: ::std::os::raw::c_ulong,
     pub _Byte: ::std::os::raw::c_ushort,
     pub _State: ::std::os::raw::c_ushort,
-}
-#[test]
-fn bindgen_test_layout__Mbstatet() {
-    const UNINIT: ::std::mem::MaybeUninit<_Mbstatet> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_Mbstatet>(),
-        8usize,
-        concat!("Size of: ", stringify!(_Mbstatet))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_Mbstatet>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_Mbstatet))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._Wchar) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_Mbstatet),
-            "::",
-            stringify!(_Wchar)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._Byte) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_Mbstatet),
-            "::",
-            stringify!(_Byte)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._State) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_Mbstatet),
-            "::",
-            stringify!(_State)
-        )
-    );
 }
 pub type mbstate_t = _Mbstatet;
 pub type time_t = __time64_t;
@@ -1195,41 +1069,7 @@ pub struct _div_t {
     pub quot: ::std::os::raw::c_int,
     pub rem: ::std::os::raw::c_int,
 }
-#[test]
-fn bindgen_test_layout__div_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_div_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_div_t>(),
-        8usize,
-        concat!("Size of: ", stringify!(_div_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_div_t>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_div_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_div_t),
-            "::",
-            stringify!(quot)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_div_t),
-            "::",
-            stringify!(rem)
-        )
-    );
-}
+
 pub type div_t = _div_t;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -1237,82 +1077,12 @@ pub struct _ldiv_t {
     pub quot: ::std::os::raw::c_long,
     pub rem: ::std::os::raw::c_long,
 }
-#[test]
-fn bindgen_test_layout__ldiv_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_ldiv_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_ldiv_t>(),
-        8usize,
-        concat!("Size of: ", stringify!(_ldiv_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_ldiv_t>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_ldiv_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_ldiv_t),
-            "::",
-            stringify!(quot)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_ldiv_t),
-            "::",
-            stringify!(rem)
-        )
-    );
-}
 pub type ldiv_t = _ldiv_t;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _lldiv_t {
     pub quot: ::std::os::raw::c_longlong,
     pub rem: ::std::os::raw::c_longlong,
-}
-#[test]
-fn bindgen_test_layout__lldiv_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_lldiv_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_lldiv_t>(),
-        16usize,
-        concat!("Size of: ", stringify!(_lldiv_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_lldiv_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_lldiv_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).quot) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_lldiv_t),
-            "::",
-            stringify!(quot)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).rem) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_lldiv_t),
-            "::",
-            stringify!(rem)
-        )
-    );
 }
 pub type lldiv_t = _lldiv_t;
 extern "C" {
@@ -1396,150 +1166,25 @@ extern "C" {
 pub struct _LDOUBLE {
     pub ld: [::std::os::raw::c_uchar; 10usize],
 }
-#[test]
-fn bindgen_test_layout__LDOUBLE() {
-    const UNINIT: ::std::mem::MaybeUninit<_LDOUBLE> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LDOUBLE>(),
-        10usize,
-        concat!("Size of: ", stringify!(_LDOUBLE))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LDOUBLE>(),
-        1usize,
-        concat!("Alignment of ", stringify!(_LDOUBLE))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ld) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LDOUBLE),
-            "::",
-            stringify!(ld)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _CRT_DOUBLE {
     pub x: f64,
-}
-#[test]
-fn bindgen_test_layout__CRT_DOUBLE() {
-    const UNINIT: ::std::mem::MaybeUninit<_CRT_DOUBLE> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_CRT_DOUBLE>(),
-        8usize,
-        concat!("Size of: ", stringify!(_CRT_DOUBLE))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_CRT_DOUBLE>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_CRT_DOUBLE))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_CRT_DOUBLE),
-            "::",
-            stringify!(x)
-        )
-    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _CRT_FLOAT {
     pub f: f32,
 }
-#[test]
-fn bindgen_test_layout__CRT_FLOAT() {
-    const UNINIT: ::std::mem::MaybeUninit<_CRT_FLOAT> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_CRT_FLOAT>(),
-        4usize,
-        concat!("Size of: ", stringify!(_CRT_FLOAT))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_CRT_FLOAT>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_CRT_FLOAT))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).f) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_CRT_FLOAT),
-            "::",
-            stringify!(f)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _LONGDOUBLE {
     pub x: f64,
 }
-#[test]
-fn bindgen_test_layout__LONGDOUBLE() {
-    const UNINIT: ::std::mem::MaybeUninit<_LONGDOUBLE> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LONGDOUBLE>(),
-        8usize,
-        concat!("Size of: ", stringify!(_LONGDOUBLE))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LONGDOUBLE>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_LONGDOUBLE))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).x) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LONGDOUBLE),
-            "::",
-            stringify!(x)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _LDBL12 {
     pub ld12: [::std::os::raw::c_uchar; 12usize],
-}
-#[test]
-fn bindgen_test_layout__LDBL12() {
-    const UNINIT: ::std::mem::MaybeUninit<_LDBL12> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_LDBL12>(),
-        12usize,
-        concat!("Size of: ", stringify!(_LDBL12))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_LDBL12>(),
-        1usize,
-        concat!("Alignment of ", stringify!(_LDBL12))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).ld12) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_LDBL12),
-            "::",
-            stringify!(ld12)
-        )
-    );
 }
 extern "C" {
     pub fn atof(_String: *const ::std::os::raw::c_char) -> f64;
@@ -2927,31 +2572,6 @@ extern "C" {
 pub struct _iobuf {
     pub _Placeholder: *mut ::std::os::raw::c_void,
 }
-#[test]
-fn bindgen_test_layout__iobuf() {
-    const UNINIT: ::std::mem::MaybeUninit<_iobuf> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_iobuf>(),
-        8usize,
-        concat!("Size of: ", stringify!(_iobuf))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_iobuf>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_iobuf))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr)._Placeholder) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_iobuf),
-            "::",
-            stringify!(_Placeholder)
-        )
-    );
-}
 pub type FILE = _iobuf;
 extern "C" {
     pub fn __acrt_iob_func(_Ix: ::std::os::raw::c_uint) -> *mut FILE;
@@ -3927,41 +3547,6 @@ pub struct _GArray {
     pub data: *mut gchar,
     pub len: gint,
 }
-#[test]
-fn bindgen_test_layout__GArray() {
-    const UNINIT: ::std::mem::MaybeUninit<_GArray> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_GArray>(),
-        16usize,
-        concat!("Size of: ", stringify!(_GArray))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_GArray>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_GArray))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).data) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_GArray),
-            "::",
-            stringify!(data)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).len) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_GArray),
-            "::",
-            stringify!(len)
-        )
-    );
-}
 extern "C" {
     pub fn g_array_new(
         zero_terminated: gboolean,
@@ -4006,51 +3591,6 @@ pub struct _GString {
     pub str_: *mut ::std::os::raw::c_char,
     pub len: gsize,
     pub allocated_len: gsize,
-}
-#[test]
-fn bindgen_test_layout__GString() {
-    const UNINIT: ::std::mem::MaybeUninit<_GString> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_GString>(),
-        16usize,
-        concat!("Size of: ", stringify!(_GString))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_GString>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_GString))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).str_) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_GString),
-            "::",
-            stringify!(str_)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).len) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_GString),
-            "::",
-            stringify!(len)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).allocated_len) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_GString),
-            "::",
-            stringify!(allocated_len)
-        )
-    );
 }
 pub type GString = _GString;
 extern "C" {
@@ -4283,81 +3823,6 @@ pub struct _wfinddata32_t {
     pub size: _fsize_t,
     pub name: [wchar_t; 260usize],
 }
-#[test]
-fn bindgen_test_layout__wfinddata32_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_wfinddata32_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_wfinddata32_t>(),
-        540usize,
-        concat!("Size of: ", stringify!(_wfinddata32_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_wfinddata32_t>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_wfinddata32_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).attrib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(attrib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_create) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(time_create)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_access) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(time_access)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_write) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(time_write)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32_t),
-            "::",
-            stringify!(name)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _wfinddata32i64_t {
@@ -4367,81 +3832,6 @@ pub struct _wfinddata32i64_t {
     pub time_write: __time32_t,
     pub size: ::std::os::raw::c_longlong,
     pub name: [wchar_t; 260usize],
-}
-#[test]
-fn bindgen_test_layout__wfinddata32i64_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_wfinddata32i64_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_wfinddata32i64_t>(),
-        544usize,
-        concat!("Size of: ", stringify!(_wfinddata32i64_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_wfinddata32i64_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_wfinddata32i64_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).attrib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(attrib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_create) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(time_create)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_access) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(time_access)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_write) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(time_write)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata32i64_t),
-            "::",
-            stringify!(name)
-        )
-    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -4453,81 +3843,6 @@ pub struct _wfinddata64i32_t {
     pub size: _fsize_t,
     pub name: [wchar_t; 260usize],
 }
-#[test]
-fn bindgen_test_layout__wfinddata64i32_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_wfinddata64i32_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_wfinddata64i32_t>(),
-        560usize,
-        concat!("Size of: ", stringify!(_wfinddata64i32_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_wfinddata64i32_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_wfinddata64i32_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).attrib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(attrib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_create) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(time_create)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_access) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(time_access)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_write) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(time_write)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64i32_t),
-            "::",
-            stringify!(name)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _wfinddata64_t {
@@ -4537,81 +3852,6 @@ pub struct _wfinddata64_t {
     pub time_write: __time64_t,
     pub size: ::std::os::raw::c_longlong,
     pub name: [wchar_t; 260usize],
-}
-#[test]
-fn bindgen_test_layout__wfinddata64_t() {
-    const UNINIT: ::std::mem::MaybeUninit<_wfinddata64_t> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_wfinddata64_t>(),
-        560usize,
-        concat!("Size of: ", stringify!(_wfinddata64_t))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_wfinddata64_t>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_wfinddata64_t))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).attrib) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(attrib)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_create) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(time_create)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_access) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(time_access)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).time_write) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(time_write)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).size) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).name) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_wfinddata64_t),
-            "::",
-            stringify!(name)
-        )
-    );
 }
 extern "C" {
     pub fn _waccess(
@@ -4826,111 +4066,6 @@ pub struct tm {
     pub tm_yday: ::std::os::raw::c_int,
     pub tm_isdst: ::std::os::raw::c_int,
 }
-#[test]
-fn bindgen_test_layout_tm() {
-    const UNINIT: ::std::mem::MaybeUninit<tm> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<tm>(),
-        36usize,
-        concat!("Size of: ", stringify!(tm))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<tm>(),
-        4usize,
-        concat!("Alignment of ", stringify!(tm))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_sec) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_sec)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_min) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_min)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_hour) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_hour)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_mday) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_mday)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_mon) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_mon)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_year) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_year)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_wday) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_wday)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_yday) as usize - ptr as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_yday)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).tm_isdst) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_isdst)
-        )
-    );
-}
 extern "C" {
     pub fn _wasctime(_Tm: *const tm) -> *mut wchar_t;
 }
@@ -5007,131 +4142,6 @@ pub struct _stat32 {
     pub st_mtime: __time32_t,
     pub st_ctime: __time32_t,
 }
-#[test]
-fn bindgen_test_layout__stat32() {
-    const UNINIT: ::std::mem::MaybeUninit<_stat32> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_stat32>(),
-        36usize,
-        concat!("Size of: ", stringify!(_stat32))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_stat32>(),
-        4usize,
-        concat!("Alignment of ", stringify!(_stat32))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_dev) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_dev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ino) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_ino)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mode) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_nlink) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_nlink)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_uid) as usize - ptr as usize },
-        10usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_uid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_gid) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_gid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_rdev) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_rdev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_size) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_atime) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_atime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mtime) as usize - ptr as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_mtime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ctime) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32),
-            "::",
-            stringify!(st_ctime)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _stat32i64 {
@@ -5146,131 +4156,6 @@ pub struct _stat32i64 {
     pub st_atime: __time32_t,
     pub st_mtime: __time32_t,
     pub st_ctime: __time32_t,
-}
-#[test]
-fn bindgen_test_layout__stat32i64() {
-    const UNINIT: ::std::mem::MaybeUninit<_stat32i64> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_stat32i64>(),
-        48usize,
-        concat!("Size of: ", stringify!(_stat32i64))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_stat32i64>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_stat32i64))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_dev) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_dev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ino) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_ino)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mode) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_nlink) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_nlink)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_uid) as usize - ptr as usize },
-        10usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_uid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_gid) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_gid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_rdev) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_rdev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_size) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_atime) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_atime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mtime) as usize - ptr as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_mtime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ctime) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat32i64),
-            "::",
-            stringify!(st_ctime)
-        )
-    );
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -5287,131 +4172,6 @@ pub struct _stat64i32 {
     pub st_mtime: __time64_t,
     pub st_ctime: __time64_t,
 }
-#[test]
-fn bindgen_test_layout__stat64i32() {
-    const UNINIT: ::std::mem::MaybeUninit<_stat64i32> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_stat64i32>(),
-        48usize,
-        concat!("Size of: ", stringify!(_stat64i32))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_stat64i32>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_stat64i32))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_dev) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_dev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ino) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_ino)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mode) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_nlink) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_nlink)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_uid) as usize - ptr as usize },
-        10usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_uid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_gid) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_gid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_rdev) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_rdev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_size) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_atime) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_atime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mtime) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_mtime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ctime) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64i32),
-            "::",
-            stringify!(st_ctime)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct _stat64 {
@@ -5427,131 +4187,6 @@ pub struct _stat64 {
     pub st_mtime: __time64_t,
     pub st_ctime: __time64_t,
 }
-#[test]
-fn bindgen_test_layout__stat64() {
-    const UNINIT: ::std::mem::MaybeUninit<_stat64> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_stat64>(),
-        56usize,
-        concat!("Size of: ", stringify!(_stat64))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_stat64>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_stat64))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_dev) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_dev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ino) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_ino)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mode) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_nlink) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_nlink)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_uid) as usize - ptr as usize },
-        10usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_uid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_gid) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_gid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_rdev) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_rdev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_size) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_atime) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_atime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mtime) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_mtime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ctime) as usize - ptr as usize },
-        48usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_stat64),
-            "::",
-            stringify!(st_ctime)
-        )
-    );
-}
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct stat {
@@ -5566,131 +4201,6 @@ pub struct stat {
     pub st_atime: time_t,
     pub st_mtime: time_t,
     pub st_ctime: time_t,
-}
-#[test]
-fn bindgen_test_layout_stat() {
-    const UNINIT: ::std::mem::MaybeUninit<stat> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<stat>(),
-        48usize,
-        concat!("Size of: ", stringify!(stat))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<stat>(),
-        8usize,
-        concat!("Alignment of ", stringify!(stat))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_dev) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_dev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ino) as usize - ptr as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_ino)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mode) as usize - ptr as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_mode)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_nlink) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_nlink)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_uid) as usize - ptr as usize },
-        10usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_uid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_gid) as usize - ptr as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_gid)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_rdev) as usize - ptr as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_rdev)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_size) as usize - ptr as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_size)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_atime) as usize - ptr as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_atime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_mtime) as usize - ptr as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_mtime)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).st_ctime) as usize - ptr as usize },
-        40usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(stat),
-            "::",
-            stringify!(st_ctime)
-        )
-    );
 }
 extern "C" {
     pub fn _fstat32(
@@ -5854,7 +4364,7 @@ pub type MonoHFunc = ::std::option::Option<
         user_data: *mut ::std::os::raw::c_void,
     ),
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_free(arg1: *mut ::std::os::raw::c_void);
 }
 #[repr(C)]
@@ -5939,7 +4449,7 @@ fn bindgen_test_layout_MonoAllocatorVTable() {
         )
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_allocator_vtable(vtable: *mut MonoAllocatorVTable) -> mono_bool;
 }
 #[repr(C)]
@@ -6433,77 +4943,6 @@ pub struct _MonoError__bindgen_ty_1 {
     pub private_flags: u16,
     pub hidden_1: [*mut ::std::os::raw::c_void; 12usize],
 }
-#[test]
-fn bindgen_test_layout__MonoError__bindgen_ty_1() {
-    const UNINIT: ::std::mem::MaybeUninit<_MonoError__bindgen_ty_1> =
-        ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_MonoError__bindgen_ty_1>(),
-        104usize,
-        concat!("Size of: ", stringify!(_MonoError__bindgen_ty_1))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_MonoError__bindgen_ty_1>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_MonoError__bindgen_ty_1))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).error_code) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_MonoError__bindgen_ty_1),
-            "::",
-            stringify!(error_code)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).private_flags) as usize - ptr as usize },
-        2usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_MonoError__bindgen_ty_1),
-            "::",
-            stringify!(private_flags)
-        )
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).hidden_1) as usize - ptr as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_MonoError__bindgen_ty_1),
-            "::",
-            stringify!(hidden_1)
-        )
-    );
-}
-#[test]
-fn bindgen_test_layout__MonoError() {
-    const UNINIT: ::std::mem::MaybeUninit<_MonoError> = ::std::mem::MaybeUninit::uninit();
-    let ptr = UNINIT.as_ptr();
-    assert_eq!(
-        ::std::mem::size_of::<_MonoError>(),
-        104usize,
-        concat!("Size of: ", stringify!(_MonoError))
-    );
-    assert_eq!(
-        ::std::mem::align_of::<_MonoError>(),
-        8usize,
-        concat!("Alignment of ", stringify!(_MonoError))
-    );
-    assert_eq!(
-        unsafe { ::std::ptr::addr_of!((*ptr).init) as usize - ptr as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(_MonoError),
-            "::",
-            stringify!(init)
-        )
-    );
-}
 pub type MonoErrorExternal = _MonoError;
 pub type MonoError = MonoErrorExternal;
 #[repr(C)]
@@ -6512,22 +4951,22 @@ pub struct _MonoErrorBoxed {
     _unused: [u8; 0],
 }
 pub type MonoErrorBoxed = _MonoErrorBoxed;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_init(error: *mut MonoError);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_init_flags(error: *mut MonoError, flags: ::std::os::raw::c_ushort);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_cleanup(error: *mut MonoError);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_ok(error: *mut MonoError) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_get_error_code(error: *mut MonoError) -> ::std::os::raw::c_ushort;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_error_get_message(error: *mut MonoError) -> *const ::std::os::raw::c_char;
 }
 #[repr(C)]
@@ -6541,32 +4980,32 @@ pub const MonoImageOpenStatus_MONO_IMAGE_ERROR_ERRNO: MonoImageOpenStatus = 1;
 pub const MonoImageOpenStatus_MONO_IMAGE_MISSING_ASSEMBLYREF: MonoImageOpenStatus = 2;
 pub const MonoImageOpenStatus_MONO_IMAGE_IMAGE_INVALID: MonoImageOpenStatus = 3;
 pub type MonoImageOpenStatus = ::std::os::raw::c_int;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_images_init();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_images_cleanup();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_open(
         fname: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_open_full(
         fname: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
         refonly: mono_bool,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_pe_file_open(
         fname: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_open_from_data(
         data: *mut ::std::os::raw::c_char,
         data_len: u32,
@@ -6574,7 +5013,7 @@ pub type MonoImageOpenStatus = ::std::os::raw::c_int;
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_open_from_data_full(
         data: *mut ::std::os::raw::c_char,
         data_len: u32,
@@ -6583,7 +5022,7 @@ pub type MonoImageOpenStatus = ::std::os::raw::c_int;
         refonly: mono_bool,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_open_from_data_with_name(
         data: *mut ::std::os::raw::c_char,
         data_len: u32,
@@ -6593,107 +5032,107 @@ pub type MonoImageOpenStatus = ::std::os::raw::c_int;
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_fixup_vtable(image: *mut MonoImage);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_loaded(name: *const ::std::os::raw::c_char) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_loaded_full(
         name: *const ::std::os::raw::c_char,
         refonly: mono_bool,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_loaded_by_guid(guid: *const ::std::os::raw::c_char) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_loaded_by_guid_full(
         guid: *const ::std::os::raw::c_char,
         refonly: mono_bool,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_init(image: *mut MonoImage);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_close(image: *mut MonoImage);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_addref(image: *mut MonoImage);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_strerror(status: MonoImageOpenStatus) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_ensure_section(
         image: *mut MonoImage,
         section: *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_ensure_section_idx(
         image: *mut MonoImage,
         section: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_entry_point(image: *mut MonoImage) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_resource(
         image: *mut MonoImage,
         offset: u32,
         size: *mut u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_load_file_for_image(
         image: *mut MonoImage,
         fileidx: ::std::os::raw::c_int,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_load_module(
         image: *mut MonoImage,
         idx: ::std::os::raw::c_int,
     ) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_name(image: *mut MonoImage) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_filename(image: *mut MonoImage) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_guid(image: *mut MonoImage) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_assembly(image: *mut MonoImage) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_is_dynamic(image: *mut MonoImage) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_rva_map(image: *mut MonoImage, rva: u32) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_table_info(
         image: *mut MonoImage,
         table_id: ::std::os::raw::c_int,
     ) -> *const MonoTableInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_table_rows(
         image: *mut MonoImage,
         table_id: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_table_info_get_rows(table: *const MonoTableInfo) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_lookup_resource(
         image: *mut MonoImage,
         res_id: u32,
@@ -6701,22 +5140,22 @@ pub type MonoImageOpenStatus = ::std::os::raw::c_int;
         name: *mut mono_unichar2,
     ) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_public_key(
         image: *mut MonoImage,
         size: *mut u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_get_strong_name(
         image: *mut MonoImage,
         size: *mut u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_strong_name_position(image: *mut MonoImage, size: *mut u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_add_to_name_cache(
         image: *mut MonoImage,
         nspace: *const ::std::os::raw::c_char,
@@ -6724,7 +5163,7 @@ pub type MonoImageOpenStatus = ::std::os::raw::c_int;
         idx: u32,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_image_has_authenticode_entry(image: *mut MonoImage) -> mono_bool;
 }
 pub const MonoExceptionEnum_MONO_EXCEPTION_CLAUSE_NONE: MonoExceptionEnum = 0;
@@ -7134,10 +5573,10 @@ fn bindgen_test_layout_MonoMarshalSpec() {
         )
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_init();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_row(
         t: *const MonoTableInfo,
         idx: ::std::os::raw::c_int,
@@ -7145,109 +5584,109 @@ fn bindgen_test_layout_MonoMarshalSpec() {
         res_size: ::std::os::raw::c_int,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_row_col(
         t: *const MonoTableInfo,
         idx: ::std::os::raw::c_int,
         col: ::std::os::raw::c_uint,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_compute_size(
         meta: *mut MonoImage,
         tableindex: ::std::os::raw::c_int,
         result_bitfield: *mut u32,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_locate(
         meta: *mut MonoImage,
         table: ::std::os::raw::c_int,
         idx: ::std::os::raw::c_int,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_locate_token(
         meta: *mut MonoImage,
         token: u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_string_heap(
         meta: *mut MonoImage,
         table_index: u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_blob_heap(
         meta: *mut MonoImage,
         table_index: u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_user_string(
         meta: *mut MonoImage,
         table_index: u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_guid_heap(
         meta: *mut MonoImage,
         table_index: u32,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_typedef_from_field(meta: *mut MonoImage, table_index: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_typedef_from_method(meta: *mut MonoImage, table_index: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_nested_in_typedef(meta: *mut MonoImage, table_index: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_nesting_typedef(
         meta: *mut MonoImage,
         table_index: u32,
         start_index: u32,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_interfaces_from_typedef(
         meta: *mut MonoImage,
         table_index: u32,
         count: *mut ::std::os::raw::c_uint,
     ) -> *mut *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_events_from_typedef(
         meta: *mut MonoImage,
         table_index: u32,
         end_idx: *mut ::std::os::raw::c_uint,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_methods_from_event(
         meta: *mut MonoImage,
         table_index: u32,
         end: *mut ::std::os::raw::c_uint,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_properties_from_typedef(
         meta: *mut MonoImage,
         table_index: u32,
         end: *mut ::std::os::raw::c_uint,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_methods_from_property(
         meta: *mut MonoImage,
         table_index: u32,
         end: *mut ::std::os::raw::c_uint,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_packing_from_typedef(
         meta: *mut MonoImage,
         table_index: u32,
@@ -7255,29 +5694,29 @@ fn bindgen_test_layout_MonoMarshalSpec() {
         size: *mut u32,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_get_marshal_info(
         meta: *mut MonoImage,
         idx: u32,
         is_field: mono_bool,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_custom_attrs_from_index(meta: *mut MonoImage, cattr_index: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_marshal_spec(
         image: *mut MonoImage,
         ptr: *const ::std::os::raw::c_char,
     ) -> *mut MonoMarshalSpec;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_free_marshal_spec(spec: *mut MonoMarshalSpec);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_implmap_from_method(meta: *mut MonoImage, method_idx: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_field_info(
         meta: *mut MonoImage,
         table_index: u32,
@@ -7286,28 +5725,28 @@ fn bindgen_test_layout_MonoMarshalSpec() {
         marshal_spec: *mut *mut MonoMarshalSpec,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_get_constant_index(meta: *mut MonoImage, token: u32, hint: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_value(
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_signed_value(
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_blob_size(
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_encode_value(
         value: u32,
         bug: *mut ::std::os::raw::c_char,
@@ -7705,84 +6144,84 @@ pub const MonoParseTypeMode_MONO_PARSE_PARAM: MonoParseTypeMode = 3;
 pub const MonoParseTypeMode_MONO_PARSE_RET: MonoParseTypeMode = 4;
 pub const MonoParseTypeMode_MONO_PARSE_FIELD: MonoParseTypeMode = 5;
 pub type MonoParseTypeMode = ::std::os::raw::c_int;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_byref(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_type(type_: *mut MonoType) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_signature(type_: *mut MonoType) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_class(type_: *mut MonoType) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_array_type(type_: *mut MonoType) -> *mut MonoArrayType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_ptr_type(type_: *mut MonoType) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_modifiers(
         type_: *mut MonoType,
         is_required: *mut mono_bool,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_struct(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_void(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_pointer(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_reference(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_is_generic_parameter(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_get_return_type(sig: *mut MonoMethodSignature) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_get_params(
         sig: *mut MonoMethodSignature,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_get_param_count(sig: *mut MonoMethodSignature) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_get_call_conv(sig: *mut MonoMethodSignature) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_vararg_start(sig: *mut MonoMethodSignature) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_is_instance(sig: *mut MonoMethodSignature) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_explicit_this(sig: *mut MonoMethodSignature) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_param_is_out(
         sig: *mut MonoMethodSignature,
         param_num: ::std::os::raw::c_int,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_typedef_or_ref(
         m: *mut MonoImage,
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_custom_mod(
         m: *mut MonoImage,
         dest: *mut MonoCustomMod,
@@ -7790,17 +6229,17 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_array(
         m: *mut MonoImage,
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> *mut MonoArrayType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_free_array(array: *mut MonoArrayType);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_type(
         m: *mut MonoImage,
         mode: MonoParseTypeMode,
@@ -7809,14 +6248,14 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_param(
         m: *mut MonoImage,
         ptr: *const ::std::os::raw::c_char,
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_field_type(
         m: *mut MonoImage,
         field_flags: ::std::os::raw::c_short,
@@ -7824,52 +6263,52 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_create_from_typespec(image: *mut MonoImage, type_spec: u32) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_free_type(type_: *mut MonoType);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_size(
         type_: *mut MonoType,
         alignment: *mut ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_stack_size(
         type_: *mut MonoType,
         alignment: *mut ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_generic_inst_is_valuetype(type_: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_generic_class_is_valuetype(gclass: *mut MonoGenericClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_type_hash(t1: *mut MonoType) -> ::std::os::raw::c_uint;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_type_equal(t1: *mut MonoType, t2: *mut MonoType) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_signature_alloc(
         image: *mut MonoImage,
         nparams: u32,
     ) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_signature_dup(sig: *mut MonoMethodSignature) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_signature(
         image: *mut MonoImage,
         token: u32,
     ) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_method_signature(
         m: *mut MonoImage,
         def: ::std::os::raw::c_int,
@@ -7877,47 +6316,47 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         rptr: *mut *const ::std::os::raw::c_char,
     ) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_free_method_signature(method: *mut MonoMethodSignature);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_signature_equal(
         sig1: *mut MonoMethodSignature,
         sig2: *mut MonoMethodSignature,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_hash(sig: *mut MonoMethodSignature) -> ::std::os::raw::c_uint;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_parse_mh(
         m: *mut MonoImage,
         ptr: *const ::std::os::raw::c_char,
     ) -> *mut MonoMethodHeader;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_free_mh(mh: *mut MonoMethodHeader);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_header_get_code(
         header: *mut MonoMethodHeader,
         code_size: *mut u32,
         max_stack: *mut u32,
     ) -> *const ::std::os::raw::c_uchar;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_header_get_locals(
         header: *mut MonoMethodHeader,
         num_locals: *mut u32,
         init_locals: *mut mono_bool,
     ) -> *mut *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_header_get_num_clauses(
         header: *mut MonoMethodHeader,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_header_get_clauses(
         header: *mut MonoMethodHeader,
         method: *mut MonoMethod,
@@ -7925,7 +6364,7 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         clause: *mut MonoExceptionClause,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_to_unmanaged(
         type_: *mut MonoType,
         mspec: *mut MonoMarshalSpec,
@@ -7934,26 +6373,26 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         conv: *mut MonoMarshalConv,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_token_from_dor(dor_index: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_guid_to_string(guid: *const u8) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_guid_to_string_minimal(guid: *const u8) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_declsec_from_index(meta: *mut MonoImage, idx: u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_translate_token_index(
         image: *mut MonoImage,
         table: ::std::os::raw::c_int,
         idx: u32,
     ) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_table_row(
         image: *mut MonoImage,
         table: ::std::os::raw::c_int,
@@ -7962,7 +6401,7 @@ pub type MonoParseTypeMode = ::std::os::raw::c_int;
         res_size: ::std::os::raw::c_int,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_metadata_decode_table_row_col(
         image: *mut MonoImage,
         table: ::std::os::raw::c_int,
@@ -7979,14 +6418,14 @@ pub type MonoStackWalk = ::std::option::Option<
         data: *mut ::std::os::raw::c_void,
     ) -> mono_bool,
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_method(
         image: *mut MonoImage,
         token: u32,
         klass: *mut MonoClass,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_method_full(
         image: *mut MonoImage,
         token: u32,
@@ -7994,7 +6433,7 @@ pub type MonoStackWalk = ::std::option::Option<
         context: *mut MonoGenericContext,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_method_constrained(
         image: *mut MonoImage,
         token: u32,
@@ -8003,10 +6442,10 @@ pub type MonoStackWalk = ::std::option::Option<
         cil_method: *mut *mut MonoMethod,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_free_method(method: *mut MonoMethod);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_signature_full(
         method: *mut MonoMethod,
         image: *mut MonoImage,
@@ -8014,53 +6453,53 @@ pub type MonoStackWalk = ::std::option::Option<
         context: *mut MonoGenericContext,
     ) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_signature(
         method: *mut MonoMethod,
         image: *mut MonoImage,
         token: u32,
     ) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_signature(method: *mut MonoMethod) -> *mut MonoMethodSignature;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_header(method: *mut MonoMethod) -> *mut MonoMethodHeader;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_name(method: *mut MonoMethod) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_class(method: *mut MonoMethod) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_token(method: *mut MonoMethod) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_flags(method: *mut MonoMethod, iflags: *mut u32) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_index(method: *mut MonoMethod) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_add_internal_call(
         name: *const ::std::os::raw::c_char,
         method: *const ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_dangerous_add_raw_internal_call(
         name: *const ::std::os::raw::c_char,
         method: *const ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_lookup_internal_call(method: *mut MonoMethod) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_lookup_icall_symbol(m: *mut MonoMethod) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_dllmap_insert(
         assembly: *mut MonoImage,
         dll: *const ::std::os::raw::c_char,
@@ -8069,35 +6508,35 @@ pub type MonoStackWalk = ::std::option::Option<
         tfunc: *const ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_lookup_pinvoke_call(
         method: *mut MonoMethod,
         exc_class: *mut *const ::std::os::raw::c_char,
         exc_arg: *mut *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_param_names(
         method: *mut MonoMethod,
         names: *mut *const ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_param_token(method: *mut MonoMethod, idx: ::std::os::raw::c_int) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_marshal_info(method: *mut MonoMethod, mspecs: *mut *mut MonoMarshalSpec);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_has_marshal_info(method: *mut MonoMethod) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_last_managed() -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_stack_walk(func: MonoStackWalk, user_data: *mut ::std::os::raw::c_void);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_stack_walk_no_il(func: MonoStackWalk, user_data: *mut ::std::os::raw::c_void);
 }
 pub type MonoStackWalkAsyncSafe = ::std::option::Option<
@@ -8109,14 +6548,14 @@ pub type MonoStackWalkAsyncSafe = ::std::option::Option<
         data: *mut ::std::os::raw::c_void,
     ) -> mono_bool,
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_stack_walk_async_safe(
         func: MonoStackWalkAsyncSafe,
         initial_sig_context: *mut ::std::os::raw::c_void,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_header_checked(
         method: *mut MonoMethod,
         error: *mut MonoError,
@@ -8134,37 +6573,37 @@ pub struct _MonoEvent {
     _unused: [u8; 0],
 }
 pub type MonoEvent = _MonoEvent;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get(image: *mut MonoImage, type_token: u32) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_full(
         image: *mut MonoImage,
         type_token: u32,
         context: *mut MonoGenericContext,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_init(klass: *mut MonoClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_vtable(domain: *mut MonoDomain, klass: *mut MonoClass) -> *mut MonoVTable;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_name(
         image: *mut MonoImage,
         name_space: *const ::std::os::raw::c_char,
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_name_case(
         image: *mut MonoImage,
         name_space: *const ::std::os::raw::c_char,
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_method_from_name_flags(
         klass: *mut MonoClass,
         name: *const ::std::os::raw::c_char,
@@ -8172,39 +6611,39 @@ pub type MonoEvent = _MonoEvent;
         flags: ::std::os::raw::c_int,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_typeref(image: *mut MonoImage, type_token: u32) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_typeref_checked(
         image: *mut MonoImage,
         type_token: u32,
         error: *mut MonoError,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_generic_parameter(
         param: *mut MonoGenericParam,
         image: *mut MonoImage,
         is_mvar: mono_bool,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_inflate_generic_type(
         type_: *mut MonoType,
         context: *mut MonoGenericContext,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_inflate_generic_method(
         method: *mut MonoMethod,
         context: *mut MonoGenericContext,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_inflated_method(method: *mut MonoMethod) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_from_token(
         image: *mut MonoImage,
         token: u32,
@@ -8212,78 +6651,78 @@ pub type MonoEvent = _MonoEvent;
         context: *mut MonoGenericContext,
     ) -> *mut MonoClassField;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_bounded_array_class_get(
         element_class: *mut MonoClass,
         rank: u32,
         bounded: mono_bool,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_class_get(element_class: *mut MonoClass, rank: u32) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_ptr_class_get(type_: *mut MonoType) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_field(klass: *mut MonoClass, field_token: u32) -> *mut MonoClassField;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_field_from_name(
         klass: *mut MonoClass,
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoClassField;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_field_token(field: *mut MonoClassField) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_event_token(event: *mut MonoEvent) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_property_from_name(
         klass: *mut MonoClass,
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoProperty;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_property_token(prop: *mut MonoProperty) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_element_size(ac: *mut MonoClass) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_instance_size(klass: *mut MonoClass) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_array_element_size(klass: *mut MonoClass) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_data_size(klass: *mut MonoClass) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_value_size(klass: *mut MonoClass, align: *mut u32) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_min_align(klass: *mut MonoClass) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_from_mono_type(type_: *mut MonoType) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_subclass_of(
         klass: *mut MonoClass,
         klassc: *mut MonoClass,
         check_interfaces: mono_bool,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_assignable_from(
         klass: *mut MonoClass,
         oklass: *mut MonoClass,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_ldtoken(
         image: *mut MonoImage,
         token: u32,
@@ -8291,191 +6730,191 @@ pub type MonoEvent = _MonoEvent;
         context: *mut MonoGenericContext,
     ) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_name(type_: *mut MonoType) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_underlying_type(type_: *mut MonoType) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_image(klass: *mut MonoClass) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_element_class(klass: *mut MonoClass) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_valuetype(klass: *mut MonoClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_enum(klass: *mut MonoClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_enum_basetype(klass: *mut MonoClass) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_parent(klass: *mut MonoClass) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_nesting_type(klass: *mut MonoClass) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_rank(klass: *mut MonoClass) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_flags(klass: *mut MonoClass) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_name(klass: *mut MonoClass) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_namespace(klass: *mut MonoClass) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_type(klass: *mut MonoClass) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_type_token(klass: *mut MonoClass) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_byref_type(klass: *mut MonoClass) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_num_fields(klass: *mut MonoClass) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_num_methods(klass: *mut MonoClass) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_num_properties(klass: *mut MonoClass) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_num_events(klass: *mut MonoClass) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_fields(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoClassField;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_methods(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_properties(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoProperty;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_events(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoEvent;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_interfaces(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_nested_types(
         klass: *mut MonoClass,
         iter: *mut *mut ::std::os::raw::c_void,
     ) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_delegate(klass: *mut MonoClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_implements_interface(
         klass: *mut MonoClass,
         iface: *mut MonoClass,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_name(field: *mut MonoClassField) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_type(field: *mut MonoClassField) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_parent(field: *mut MonoClassField) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_flags(field: *mut MonoClassField) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_offset(field: *mut MonoClassField) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_data(field: *mut MonoClassField) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_name(prop: *mut MonoProperty) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_set_method(prop: *mut MonoProperty) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_get_method(prop: *mut MonoProperty) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_parent(prop: *mut MonoProperty) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_flags(prop: *mut MonoProperty) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_name(event: *mut MonoEvent) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_add_method(event: *mut MonoEvent) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_remove_method(event: *mut MonoEvent) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_raise_method(event: *mut MonoEvent) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_parent(event: *mut MonoEvent) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_flags(event: *mut MonoEvent) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_method_from_name(
         klass: *mut MonoClass,
         name: *const ::std::os::raw::c_char,
         param_count: ::std::os::raw::c_int,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_name_from_token(
         image: *mut MonoImage,
         type_token: u32,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_can_access_field(
         method: *mut MonoMethod,
         field: *mut MonoClassField,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_can_access_method(
         method: *mut MonoMethod,
         called: *mut MonoMethod,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_is_nullable(klass: *mut MonoClass) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_class_get_nullable_param(klass: *mut MonoClass) -> *mut MonoClass;
 }
 #[repr(C)]
@@ -8611,39 +7050,39 @@ pub type MonoCompileFunc = ::std::option::Option<
 >;
 pub type MonoMainThreadFunc =
     ::std::option::Option<unsafe extern "C" fn(user_data: *mut ::std::os::raw::c_void)>;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_chars(s: *mut MonoString) -> *mut mono_unichar2;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_length(s: *mut MonoString) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_new(domain: *mut MonoDomain, klass: *mut MonoClass) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_new_specific(vtable: *mut MonoVTable) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_new_fast(vtable: *mut MonoVTable) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_new_alloc_specific(vtable: *mut MonoVTable) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_new_from_token(
         domain: *mut MonoDomain,
         image: *mut MonoImage,
         token: u32,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_new(
         domain: *mut MonoDomain,
         eclass: *mut MonoClass,
         n: usize,
     ) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_new_full(
         domain: *mut MonoDomain,
         array_class: *mut MonoClass,
@@ -8651,125 +7090,125 @@ pub type MonoMainThreadFunc =
         lower_bounds: *mut isize,
     ) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_new_specific(vtable: *mut MonoVTable, n: usize) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_clone(array: *mut MonoArray) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_addr_with_size(
         array: *mut MonoArray,
         size: ::std::os::raw::c_int,
         idx: usize,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_array_length(array: *mut MonoArray) -> usize;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_empty(domain: *mut MonoDomain) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_empty_wrapper() -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new_utf16(
         domain: *mut MonoDomain,
         text: *const mono_unichar2,
         len: i32,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new_size(domain: *mut MonoDomain, len: i32) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_ldstr(
         domain: *mut MonoDomain,
         image: *mut MonoImage,
         str_index: u32,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_is_interned(str_: *mut MonoString) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_intern(str_: *mut MonoString) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new(
         domain: *mut MonoDomain,
         text: *const ::std::os::raw::c_char,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new_wrapper(text: *const ::std::os::raw::c_char) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new_len(
         domain: *mut MonoDomain,
         text: *const ::std::os::raw::c_char,
         length: ::std::os::raw::c_uint,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_new_utf32(
         domain: *mut MonoDomain,
         text: *const mono_unichar4,
         len: i32,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_to_utf8(string_obj: *mut MonoString) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_to_utf8_checked(
         string_obj: *mut MonoString,
         error: *mut MonoError,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_to_utf16(string_obj: *mut MonoString) -> *mut mono_unichar2;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_to_utf32(string_obj: *mut MonoString) -> *mut mono_unichar4;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_from_utf16(data: *mut mono_unichar2) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_from_utf32(data: *mut mono_unichar4) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_equal(s1: *mut MonoString, s2: *mut MonoString) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_string_hash(s: *mut MonoString) -> ::std::os::raw::c_uint;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_hash(obj: *mut MonoObject) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_to_string(
         obj: *mut MonoObject,
         exc: *mut *mut MonoObject,
     ) -> *mut MonoString;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_value_box(
         domain: *mut MonoDomain,
         klass: *mut MonoClass,
         val: *mut ::std::os::raw::c_void,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_value_copy(
         dest: *mut ::std::os::raw::c_void,
         src: *mut ::std::os::raw::c_void,
         klass: *mut MonoClass,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_value_copy_array(
         dest: *mut MonoArray,
         dest_idx: ::std::os::raw::c_int,
@@ -8777,82 +7216,82 @@ pub type MonoMainThreadFunc =
         count: ::std::os::raw::c_int,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_get_vtable(obj: *mut MonoObject) -> *mut MonoVTable;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_get_domain(obj: *mut MonoObject) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_get_class(obj: *mut MonoObject) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_unbox(obj: *mut MonoObject) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_clone(obj: *mut MonoObject) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_isinst(obj: *mut MonoObject, klass: *mut MonoClass) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_isinst_mbyref(
         obj: *mut MonoObject,
         klass: *mut MonoClass,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_castclass_mbyref(
         obj: *mut MonoObject,
         klass: *mut MonoClass,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_monitor_try_enter(obj: *mut MonoObject, ms: u32) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_monitor_enter(obj: *mut MonoObject) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_monitor_enter_v4(obj: *mut MonoObject, lock_taken: *mut ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_get_size(o: *mut MonoObject) -> ::std::os::raw::c_uint;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_monitor_exit(obj: *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_raise_exception(ex: *mut MonoException);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_set_pending_exception(
         exc: *mut MonoException,
         overwrite: mono_bool,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reraise_exception(ex: *mut MonoException);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_object_init(this_obj: *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_class_init(vtable: *mut MonoVTable);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_vtable_domain(vtable: *mut MonoVTable) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_vtable_class(vtable: *mut MonoVTable) -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_object_get_virtual_method(
         obj: *mut MonoObject,
         method: *mut MonoMethod,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_invoke(
         method: *mut MonoMethod,
         obj: *mut ::std::os::raw::c_void,
@@ -8860,23 +7299,23 @@ pub type MonoMainThreadFunc =
         exc: *mut *mut MonoObject,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_delegate_invoke(klass: *mut MonoClass) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_delegate_begin_invoke(klass: *mut MonoClass) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_delegate_end_invoke(klass: *mut MonoClass) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_delegate_invoke(
         delegate: *mut MonoObject,
         params: *mut *mut ::std::os::raw::c_void,
         exc: *mut *mut MonoObject,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_invoke_array(
         method: *mut MonoMethod,
         obj: *mut ::std::os::raw::c_void,
@@ -8884,20 +7323,20 @@ pub type MonoMainThreadFunc =
         exc: *mut *mut MonoObject,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_unmanaged_thunk(method: *mut MonoMethod) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_get_main_args() -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_exec_managed_code(
         domain: *mut MonoDomain,
         main_func: MonoMainThreadFunc,
         main_args: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_run_main(
         method: *mut MonoMethod,
         argc: ::std::os::raw::c_int,
@@ -8905,20 +7344,20 @@ pub type MonoMainThreadFunc =
         exc: *mut *mut MonoObject,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_exec_main(
         method: *mut MonoMethod,
         args: *mut MonoArray,
         exc: *mut *mut MonoObject,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_set_main_args(
         argc: ::std::os::raw::c_int,
         argv: *mut *mut ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_load_remote_field(
         this_obj: *mut MonoObject,
         klass: *mut MonoClass,
@@ -8926,14 +7365,14 @@ pub type MonoMainThreadFunc =
         res: *mut *mut ::std::os::raw::c_void,
     ) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_load_remote_field_new(
         this_obj: *mut MonoObject,
         klass: *mut MonoClass,
         field: *mut MonoClassField,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_store_remote_field(
         this_obj: *mut MonoObject,
         klass: *mut MonoClass,
@@ -8941,7 +7380,7 @@ pub type MonoMainThreadFunc =
         val: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_store_remote_field_new(
         this_obj: *mut MonoObject,
         klass: *mut MonoClass,
@@ -8949,51 +7388,51 @@ pub type MonoMainThreadFunc =
         arg: *mut MonoObject,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_unhandled_exception(exc: *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_print_unhandled_exception(exc: *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_compile_method(method: *mut MonoMethod) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_set_value(
         obj: *mut MonoObject,
         field: *mut MonoClassField,
         value: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_static_set_value(
         vt: *mut MonoVTable,
         field: *mut MonoClassField,
         value: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_value(
         obj: *mut MonoObject,
         field: *mut MonoClassField,
         value: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_static_get_value(
         vt: *mut MonoVTable,
         field: *mut MonoClassField,
         value: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_value_object(
         domain: *mut MonoDomain,
         field: *mut MonoClassField,
         obj: *mut MonoObject,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_set_value(
         prop: *mut MonoProperty,
         obj: *mut ::std::os::raw::c_void,
@@ -9001,7 +7440,7 @@ pub type MonoMainThreadFunc =
         exc: *mut *mut MonoObject,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_value(
         prop: *mut MonoProperty,
         obj: *mut ::std::os::raw::c_void,
@@ -9009,16 +7448,16 @@ pub type MonoMainThreadFunc =
         exc: *mut *mut MonoObject,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gchandle_new(obj: *mut MonoObject, pinned: mono_bool) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gchandle_new_weakref(obj: *mut MonoObject, track_resurrection: mono_bool) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gchandle_get_target(gchandle: u32) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gchandle_free(gchandle: u32);
 }
 pub type mono_reference_queue_callback =
@@ -9029,55 +7468,55 @@ pub struct _MonoReferenceQueue {
     _unused: [u8; 0],
 }
 pub type MonoReferenceQueue = _MonoReferenceQueue;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_reference_queue_new(
         callback: mono_reference_queue_callback,
     ) -> *mut MonoReferenceQueue;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_reference_queue_free(queue: *mut MonoReferenceQueue);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_reference_queue_add(
         queue: *mut MonoReferenceQueue,
         obj: *mut MonoObject,
         user_data: *mut ::std::os::raw::c_void,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_set_field(
         obj: *mut MonoObject,
         field_ptr: *mut ::std::os::raw::c_void,
         value: *mut MonoObject,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_set_arrayref(
         arr: *mut MonoArray,
         slot_ptr: *mut ::std::os::raw::c_void,
         value: *mut MonoObject,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_arrayref_copy(
         dest_ptr: *mut ::std::os::raw::c_void,
         src_ptr: *mut ::std::os::raw::c_void,
         count: ::std::os::raw::c_int,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_generic_store(ptr: *mut ::std::os::raw::c_void, value: *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_generic_store_atomic(
         ptr: *mut ::std::os::raw::c_void,
         value: *mut MonoObject,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_generic_nostore(ptr: *mut ::std::os::raw::c_void);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_value_copy(
         dest: *mut ::std::os::raw::c_void,
         src: *mut ::std::os::raw::c_void,
@@ -9085,7 +7524,7 @@ pub type MonoReferenceQueue = _MonoReferenceQueue;
         klass: *mut MonoClass,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_gc_wbarrier_object_copy(obj: *mut MonoObject, src: *mut MonoObject);
 }
 #[repr(C)]
@@ -9309,13 +7748,13 @@ pub const MonoResolveTokenError_ResolveTokenError_OutOfRange: MonoResolveTokenEr
 pub const MonoResolveTokenError_ResolveTokenError_BadTable: MonoResolveTokenError = 1;
 pub const MonoResolveTokenError_ResolveTokenError_Other: MonoResolveTokenError = 2;
 pub type MonoResolveTokenError = ::std::os::raw::c_int;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_parse_type(
         name: *mut ::std::os::raw::c_char,
         info: *mut MonoTypeNameParse,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_type(
         image: *mut MonoImage,
         info: *mut MonoTypeNameParse,
@@ -9323,100 +7762,100 @@ pub type MonoResolveTokenError = ::std::os::raw::c_int;
         type_resolve: *mut mono_bool,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_free_type_info(info: *mut MonoTypeNameParse);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_type_from_name(
         name: *mut ::std::os::raw::c_char,
         image: *mut MonoImage,
     ) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_token(obj: *mut MonoObject) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_get_object(
         domain: *mut MonoDomain,
         assembly: *mut MonoAssembly,
     ) -> *mut MonoReflectionAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_module_get_object(
         domain: *mut MonoDomain,
         image: *mut MonoImage,
     ) -> *mut MonoReflectionModule;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_module_file_get_object(
         domain: *mut MonoDomain,
         image: *mut MonoImage,
         table_index: ::std::os::raw::c_int,
     ) -> *mut MonoReflectionModule;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_get_object(
         domain: *mut MonoDomain,
         type_: *mut MonoType,
     ) -> *mut MonoReflectionType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_object(
         domain: *mut MonoDomain,
         method: *mut MonoMethod,
         refclass: *mut MonoClass,
     ) -> *mut MonoReflectionMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_get_object(
         domain: *mut MonoDomain,
         klass: *mut MonoClass,
         field: *mut MonoClassField,
     ) -> *mut MonoReflectionField;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_property_get_object(
         domain: *mut MonoDomain,
         klass: *mut MonoClass,
         property: *mut MonoProperty,
     ) -> *mut MonoReflectionProperty;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_event_get_object(
         domain: *mut MonoDomain,
         klass: *mut MonoClass,
         event: *mut MonoEvent,
     ) -> *mut MonoReflectionEvent;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_param_get_objects(
         domain: *mut MonoDomain,
         method: *mut MonoMethod,
     ) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_body_get_object(
         domain: *mut MonoDomain,
         method: *mut MonoMethod,
     ) -> *mut MonoReflectionMethodBody;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_dbnull_object(domain: *mut MonoDomain) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_custom_attrs_by_type(
         obj: *mut MonoObject,
         attr_klass: *mut MonoClass,
         error: *mut MonoError,
     ) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_custom_attrs(obj: *mut MonoObject) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_custom_attrs_data(obj: *mut MonoObject) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_custom_attrs_blob(
         assembly: *mut MonoReflectionAssembly,
         ctor: *mut MonoObject,
@@ -9427,62 +7866,62 @@ pub type MonoResolveTokenError = ::std::os::raw::c_int;
         fieldValues: *mut MonoArray,
     ) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_get_custom_attrs_info(obj: *mut MonoObject) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_construct(cinfo: *mut MonoCustomAttrInfo) -> *mut MonoArray;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_index(image: *mut MonoImage, idx: u32)
         -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_method(method: *mut MonoMethod) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_class(klass: *mut MonoClass) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_assembly(assembly: *mut MonoAssembly) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_property(
         klass: *mut MonoClass,
         property: *mut MonoProperty,
     ) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_event(
         klass: *mut MonoClass,
         event: *mut MonoEvent,
     ) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_field(
         klass: *mut MonoClass,
         field: *mut MonoClassField,
     ) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_from_param(
         method: *mut MonoMethod,
         param: u32,
     ) -> *mut MonoCustomAttrInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_has_attr(
         ainfo: *mut MonoCustomAttrInfo,
         attr_klass: *mut MonoClass,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_get_attr(
         ainfo: *mut MonoCustomAttrInfo,
         attr_klass: *mut MonoClass,
     ) -> *mut MonoObject;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_custom_attrs_free(ainfo: *mut MonoCustomAttrInfo);
 }
 pub const MONO_DECLSEC_FLAG_REQUEST: _bindgen_ty_65 = 1;
@@ -9504,13 +7943,13 @@ pub const MONO_DECLSEC_FLAG_LINKDEMAND_CHOICE: _bindgen_ty_65 = 32768;
 pub const MONO_DECLSEC_FLAG_INHERITANCEDEMAND_CHOICE: _bindgen_ty_65 = 65536;
 pub const MONO_DECLSEC_FLAG_DEMAND_CHOICE: _bindgen_ty_65 = 131072;
 pub type _bindgen_ty_65 = ::std::os::raw::c_int;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_flags_from_method(method: *mut MonoMethod) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_flags_from_class(klass: *mut MonoClass) -> u32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_flags_from_assembly(assembly: *mut MonoAssembly) -> u32;
 }
 #[repr(C)]
@@ -9619,56 +8058,56 @@ fn bindgen_test_layout_MonoDeclSecurityActions() {
         )
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_demands(
         callee: *mut MonoMethod,
         demands: *mut MonoDeclSecurityActions,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_linkdemands(
         callee: *mut MonoMethod,
         klass: *mut MonoDeclSecurityActions,
         cmethod: *mut MonoDeclSecurityActions,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_inheritdemands_class(
         klass: *mut MonoClass,
         demands: *mut MonoDeclSecurityActions,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_inheritdemands_method(
         callee: *mut MonoMethod,
         demands: *mut MonoDeclSecurityActions,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_method_action(
         method: *mut MonoMethod,
         action: u32,
         entry: *mut MonoDeclSecurityEntry,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_class_action(
         klass: *mut MonoClass,
         action: u32,
         entry: *mut MonoDeclSecurityEntry,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_declsec_get_assembly_action(
         assembly: *mut MonoAssembly,
         action: u32,
         entry: *mut MonoDeclSecurityEntry,
     ) -> MonoBoolean;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_type_get_type(reftype: *mut MonoReflectionType) -> *mut MonoType;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_reflection_assembly_get_assembly(
         refassembly: *mut MonoReflectionAssembly,
     ) -> *mut MonoAssembly;
@@ -9692,247 +8131,247 @@ pub type MonoAppDomain = _MonoAppDomain;
 pub type MonoDomainFunc = ::std::option::Option<
     unsafe extern "C" fn(domain: *mut MonoDomain, user_data: *mut ::std::os::raw::c_void),
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_init(filename: *const ::std::os::raw::c_char) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_init_from_assembly(
         domain_name: *const ::std::os::raw::c_char,
         filename: *const ::std::os::raw::c_char,
     ) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_init_version(
         domain_name: *const ::std::os::raw::c_char,
         version: *const ::std::os::raw::c_char,
     ) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_root_domain() -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_init(
         domain: *mut MonoDomain,
         start_cb: MonoThreadStartCB,
         attach_cb: MonoThreadAttachCB,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_cleanup(domain: *mut MonoDomain);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_runtime_cleanup(func: MonoDomainFunc);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_quit();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_set_shutting_down();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_runtime_is_shutting_down() -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_check_corlib_version() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_create() -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_create_appdomain(
         friendly_name: *mut ::std::os::raw::c_char,
         configuration_file: *mut ::std::os::raw::c_char,
     ) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_set_config(
         domain: *mut MonoDomain,
         base_dir: *const ::std::os::raw::c_char,
         config_file_name: *const ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_get() -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_get_by_id(domainid: i32) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_get_id(domain: *mut MonoDomain) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_get_friendly_name(domain: *mut MonoDomain) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_set(domain: *mut MonoDomain, force: mono_bool) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_set_internal(domain: *mut MonoDomain);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_unload(domain: *mut MonoDomain);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_try_unload(domain: *mut MonoDomain, exc: *mut *mut MonoObject);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_is_unloading(domain: *mut MonoDomain) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_from_appdomain(appdomain: *mut MonoAppDomain) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_foreach(func: MonoDomainFunc, user_data: *mut ::std::os::raw::c_void);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_assembly_open(
         domain: *mut MonoDomain,
         name: *const ::std::os::raw::c_char,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_finalize(domain: *mut MonoDomain, timeout: u32) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_free(domain: *mut MonoDomain, force: mono_bool);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_has_type_resolve(domain: *mut MonoDomain) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_try_type_resolve(
         domain: *mut MonoDomain,
         name: *mut ::std::os::raw::c_char,
         tb: *mut MonoObject,
     ) -> *mut MonoReflectionAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_domain_owns_vtable_slot(
         domain: *mut MonoDomain,
         vtable_slot: *mut ::std::os::raw::c_void,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_init(domain: *mut MonoDomain);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_set(new_context: *mut MonoAppContext);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_get() -> *mut MonoAppContext;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_get_id(context: *mut MonoAppContext) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_get_domain_id(context: *mut MonoAppContext) -> i32;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_info_table_find(
         domain: *mut MonoDomain,
         addr: *mut ::std::os::raw::c_void,
     ) -> *mut MonoJitInfo;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_info_get_code_start(ji: *mut MonoJitInfo) -> *mut ::std::os::raw::c_void;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_info_get_code_size(ji: *mut MonoJitInfo) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_info_get_method(ji: *mut MonoJitInfo) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_corlib() -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_object_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_byte_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_void_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_boolean_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_sbyte_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_int16_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_uint16_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_int32_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_uint32_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_intptr_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_uintptr_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_int64_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_uint64_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_single_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_double_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_char_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_string_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_enum_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_array_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_thread_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_exception_class() -> *mut MonoClass;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_security_enable_core_clr();
 }
 pub type MonoCoreClrPlatformCB = ::std::option::Option<
     unsafe extern "C" fn(image_name: *const ::std::os::raw::c_char) -> mono_bool,
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_security_set_core_clr_platform_callback(callback: MonoCoreClrPlatformCB);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_init(file: *const ::std::os::raw::c_char) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_init_version(
         root_domain_name: *const ::std::os::raw::c_char,
         runtime_version: *const ::std::os::raw::c_char,
     ) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_init_version_for_test_only(
         root_domain_name: *const ::std::os::raw::c_char,
         runtime_version: *const ::std::os::raw::c_char,
     ) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_exec(
         domain: *mut MonoDomain,
         assembly: *mut MonoAssembly,
@@ -9940,19 +8379,19 @@ pub type MonoCoreClrPlatformCB = ::std::option::Option<
         argv: *mut *mut ::std::os::raw::c_char,
     ) -> ::std::os::raw::c_int;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_cleanup(domain: *mut MonoDomain);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_set_trace_options(options: *const ::std::os::raw::c_char) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_signal_chaining(chain_signals: mono_bool);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_crash_chaining(chain_signals: mono_bool);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     #[doc = " This function is deprecated, use mono_jit_set_aot_mode instead."]
     pub fn mono_jit_set_aot_only(aot_only: mono_bool);
 }
@@ -9967,10 +8406,10 @@ pub const MonoAotMode_MONO_AOT_MODE_LLVMONLY_INTERP: MonoAotMode = 7;
 pub const MonoAotMode_MONO_AOT_MODE_LAST: MonoAotMode = 1000;
 #[doc = " Allows control over our AOT (Ahead-of-time) compilation mode."]
 pub type MonoAotMode = ::std::os::raw::c_int;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_set_aot_mode(mode: MonoAotMode);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_aot_compiling() -> mono_bool;
 }
 pub const MonoBreakPolicy_MONO_BREAK_POLICY_ALWAYS: MonoBreakPolicy = 0;
@@ -9979,95 +8418,95 @@ pub const MonoBreakPolicy_MONO_BREAK_POLICY_ON_DBG: MonoBreakPolicy = 2;
 pub type MonoBreakPolicy = ::std::os::raw::c_int;
 pub type MonoBreakPolicyFunc =
     ::std::option::Option<unsafe extern "C" fn(method: *mut MonoMethod) -> MonoBreakPolicy>;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_break_policy(policy_callback: MonoBreakPolicyFunc);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_parse_options(
         argc: ::std::os::raw::c_int,
         argv: *mut *mut ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_runtime_build_info() -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_use_llvm(use_llvm: mono_bool);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_aot_register_module(aot_info: *mut *mut ::std::os::raw::c_void);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_jit_thread_attach(domain: *mut MonoDomain) -> *mut MonoDomain;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_get_os() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_get_cpu() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_get_wordsize() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_config_dir() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_config_dir(dir: *const ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_get_machine_config() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_cleanup();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_parse(filename: *const ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_for_assembly(assembly: *mut MonoImage);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_parse_memory(buffer: *const ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_string_for_assembly_file(
         filename: *const ::std::os::raw::c_char,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_set_server_mode(server_mode: mono_bool);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_config_is_server_mode() -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assemblies_init();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assemblies_cleanup();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_open(
         filename: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_open_full(
         filename: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
         refonly: mono_bool,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load(
         aname: *mut MonoAssemblyName,
         basedir: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_full(
         aname: *mut MonoAssemblyName,
         basedir: *const ::std::os::raw::c_char,
@@ -10075,14 +8514,14 @@ pub type MonoBreakPolicyFunc =
         refonly: mono_bool,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_from(
         image: *mut MonoImage,
         fname: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_from_full(
         image: *mut MonoImage,
         fname: *const ::std::os::raw::c_char,
@@ -10090,77 +8529,77 @@ pub type MonoBreakPolicyFunc =
         refonly: mono_bool,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_with_partial_name(
         name: *const ::std::os::raw::c_char,
         status: *mut MonoImageOpenStatus,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_loaded(aname: *mut MonoAssemblyName) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_loaded_full(
         aname: *mut MonoAssemblyName,
         refonly: mono_bool,
     ) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_get_assemblyref(
         image: *mut MonoImage,
         index: ::std::os::raw::c_int,
         aname: *mut MonoAssemblyName,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_reference(image: *mut MonoImage, index: ::std::os::raw::c_int);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_references(image: *mut MonoImage, status: *mut MonoImageOpenStatus);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_load_module(assembly: *mut MonoAssembly, idx: u32) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_close(assembly: *mut MonoAssembly);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_setrootdir(root_dir: *const ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_getrootdir() -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_native_getrootdir() -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_foreach(func: MonoFunc, user_data: *mut ::std::os::raw::c_void);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_set_main(assembly: *mut MonoAssembly);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_get_main() -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_get_image(assembly: *mut MonoAssembly) -> *mut MonoImage;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_get_name(assembly: *mut MonoAssembly) -> *mut MonoAssemblyName;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_fill_assembly_name(
         image: *mut MonoImage,
         aname: *mut MonoAssemblyName,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_names_equal(
         l: *mut MonoAssemblyName,
         r: *mut MonoAssemblyName,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_stringify_assembly_name(
         aname: *mut MonoAssemblyName,
     ) -> *mut ::std::os::raw::c_char;
@@ -10168,7 +8607,7 @@ pub type MonoBreakPolicyFunc =
 pub type MonoAssemblyLoadFunc = ::std::option::Option<
     unsafe extern "C" fn(assembly: *mut MonoAssembly, user_data: *mut ::std::os::raw::c_void),
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_load_hook(
         func: MonoAssemblyLoadFunc,
         user_data: *mut ::std::os::raw::c_void,
@@ -10180,28 +8619,28 @@ pub type MonoAssemblySearchFunc = ::std::option::Option<
         user_data: *mut ::std::os::raw::c_void,
     ) -> *mut MonoAssembly,
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_search_hook(
         func: MonoAssemblySearchFunc,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_refonly_search_hook(
         func: MonoAssemblySearchFunc,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_invoke_search_hook(aname: *mut MonoAssemblyName) -> *mut MonoAssembly;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_postload_search_hook(
         func: MonoAssemblySearchFunc,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_postload_refonly_search_hook(
         func: MonoAssemblySearchFunc,
         user_data: *mut ::std::os::raw::c_void,
@@ -10214,35 +8653,35 @@ pub type MonoAssemblyPreLoadFunc = ::std::option::Option<
         user_data: *mut ::std::os::raw::c_void,
     ) -> *mut MonoAssembly,
 >;
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_preload_hook(
         func: MonoAssemblyPreLoadFunc,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_install_assembly_refonly_preload_hook(
         func: MonoAssemblyPreLoadFunc,
         user_data: *mut ::std::os::raw::c_void,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_invoke_load_hook(ass: *mut MonoAssembly);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_new(name: *const ::std::os::raw::c_char) -> *mut MonoAssemblyName;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_get_name(
         aname: *mut MonoAssemblyName,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_get_culture(
         aname: *mut MonoAssemblyName,
     ) -> *const ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_get_version(
         aname: *mut MonoAssemblyName,
         minor: *mut u16,
@@ -10250,10 +8689,10 @@ pub type MonoAssemblyPreLoadFunc = ::std::option::Option<
         revision: *mut u16,
     ) -> u16;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_get_pubkeytoken(aname: *mut MonoAssemblyName) -> *mut mono_byte;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_assembly_name_free(aname: *mut MonoAssemblyName);
 }
 #[repr(C)]
@@ -10308,35 +8747,35 @@ fn bindgen_test_layout_MonoBundledAssembly() {
         )
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_register_bundled_assemblies(assemblies: *mut *const MonoBundledAssembly);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_register_config_for_assembly(
         assembly_name: *const ::std::os::raw::c_char,
         config_xml: *const ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_register_symfile_for_assembly(
         assembly_name: *const ::std::os::raw::c_char,
         raw_contents: *const mono_byte,
         size: ::std::os::raw::c_int,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_register_machine_config(config_xml: *const ::std::os::raw::c_char);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_rootdir();
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_dirs(
         assembly_dir: *const ::std::os::raw::c_char,
         config_dir: *const ::std::os::raw::c_char,
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_set_assemblies_path(path: *const ::std::os::raw::c_char);
 }
 pub type MonoDisIndenter = ::std::option::Option<
@@ -10438,7 +8877,7 @@ fn bindgen_test_layout_MonoDisHelper() {
         )
     );
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_disasm_code_one(
         dh: *mut MonoDisHelper,
         method: *mut MonoMethod,
@@ -10446,7 +8885,7 @@ fn bindgen_test_layout_MonoDisHelper() {
         endp: *mut *const mono_byte,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_disasm_code(
         dh: *mut MonoDisHelper,
         method: *mut MonoMethod,
@@ -10454,70 +8893,70 @@ fn bindgen_test_layout_MonoDisHelper() {
         end: *const mono_byte,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_type_full_name(type_: *mut MonoType) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_signature_get_desc(
         sig: *mut MonoMethodSignature,
         include_namespace: mono_bool,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_context_get_desc(context: *mut MonoGenericContext) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_new(
         name: *const ::std::os::raw::c_char,
         include_namespace: mono_bool,
     ) -> *mut MonoMethodDesc;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_from_method(method: *mut MonoMethod) -> *mut MonoMethodDesc;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_free(desc: *mut MonoMethodDesc);
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_match(desc: *mut MonoMethodDesc, method: *mut MonoMethod) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_is_full(desc: *mut MonoMethodDesc) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_full_match(
         desc: *mut MonoMethodDesc,
         method: *mut MonoMethod,
     ) -> mono_bool;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_search_in_class(
         desc: *mut MonoMethodDesc,
         klass: *mut MonoClass,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_desc_search_in_image(
         desc: *mut MonoMethodDesc,
         image: *mut MonoImage,
     ) -> *mut MonoMethod;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_full_name(
         method: *mut MonoMethod,
         signature: mono_bool,
     ) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_method_get_reflection_name(method: *mut MonoMethod) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_field_full_name(field: *mut MonoClassField) -> *mut ::std::os::raw::c_char;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_threads_attach_coop(domain: *mut MonoDomain, dummy: *mut gpointer) -> gpointer;
 }
-#[link(name = "mono-2.0-sgen")] extern "C" {
+#[link(name = "monosgen-2.0")] extern "C" {
     pub fn mono_threads_detach_coop(cookie: gpointer, dummy: *mut gpointer);
 }
 #[repr(C)]
@@ -10763,8 +9202,6 @@ fn bindgen_test_layout_MonoDecimal() {
         )
     );
 }
-
-
 
 // --- Embeddinator-4000 bindings --- //
 pub const E4KDateTimeKind_E4KDateTimeKind_Unspecified: E4KDateTimeKind = 0;
