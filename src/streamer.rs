@@ -1,5 +1,6 @@
 #![allow(unused)]
 
+use std::borrow::BorrowMut;
 use anyhow::*;
 use std::ffi::{CStr, CString};
 use std::path::Path;
@@ -9,7 +10,7 @@ use crate::bindings::*;
 use crate::{mzml, mzml_spectrum};
 use crate::mono::MONO_EMBEDDINATOR;
 use crate::mzml::{MzMLMetaData};
-use crate::mzml_spectrum::{MzMLSpectrumMetaData, SpectrumData};
+use crate::mzml_spectrum::{MzMLSpectrum, MzMLSpectrumMetaData, SpectrumData};
 
 pub fn get_thermo_raw_file_parser_version() -> Result<String> { // Result<String>
     MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
@@ -36,16 +37,11 @@ pub struct RawFileStreamer {
     spectrum_wrapper_ptr: *mut ThermoRawFileParser_Writer_SpectrumWrapper
 }
 
-/*impl Drop for RawFileStreamer {
+impl Drop for RawFileStreamer {
     fn drop(&mut self) {
-        if MONO_EMBEDDINATOR.lock().unwrap().check_availability().is_ok() {
-            unsafe {
-                // TODO: double check if this is enough
-                ThermoRawFileParser_RawFileWrapper_Dispose(self.raw_file_wrapper_ptr)
-            }
-        }
+        self.dispose()
     }
-}*/
+}
 
 impl RawFileStreamer {
 
@@ -95,7 +91,7 @@ impl RawFileStreamer {
 
             //println!("XML header:\n{}", meta_data_as_xml_string);
 
-            let meta_data = mzml::parse_mzml_header(&meta_data_as_xml_string)?;
+            let meta_data = mzml::parse_mzml_metadata(&meta_data_as_xml_string)?;
 
             let spectrum_wrapper_ptr = ThermoRawFileParser_Writer_MzMlSpectrumWriter_getSpectrumWrapper(mzml_writer);
 
@@ -123,9 +119,92 @@ impl RawFileStreamer {
         self.last_scan_number
     }
 
-    // TODO: we may want to use something like realloc to maintain a single buffer instead of allocating memory every time
-    pub fn get_spectrum(&self, number: u32) -> Result<(MzMLSpectrumMetaData,SpectrumData)> {
+    pub fn process_spectra_in_parallel<F>(&self, mut on_each_spectrum: F, queue_size: usize) -> Result<()>
+    where
+        F: FnMut(Result<MzMLSpectrum>) -> Result<()> + Send + Sync,
+     {
+
+        let (sender_queue, receiver_queue) = std::sync::mpsc::sync_channel(queue_size);
+
+        let x = std::thread::scope(|thread_scope| {
+            let processing_thread = thread_scope.spawn(move || {
+                let mut sn = 0;
+                for spec_res in receiver_queue.iter() {
+                    sn += 1;
+                    //println!("{}", sn);
+
+                    on_each_spectrum(spec_res);
+
+                    /*if sn % 1000 == 0 {
+                        println!("Processed {} spectra...", sn);
+                    }*/
+                }
+
+                println!("All spectra have been processed!");
+
+                ()
+            });
+
+            self._enqueue_all_spectra(sender_queue)?;
+
+            processing_thread.join().or_else(|e| {
+                let error_message = if let Some(err) = e.downcast_ref::<&str>() {
+                    anyhow!(err.to_string())
+                } else if let Some(err) = e.downcast_ref::<String>() {
+                    anyhow!(err.to_string())
+                } else {
+                    anyhow!("Unknown error occurred in the processing thread")
+                };
+                Err(error_message)
+            })
+        })?;
+
+        Ok(())
+    }
+
+    fn _enqueue_all_spectra(&self, queue: std::sync::mpsc::SyncSender<Result<MzMLSpectrum>>) -> Result<()> {
+
         MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
+
+        for spec_num in 1 ..= self.get_last_scan_number() {
+            println!("spec_num={}", spec_num);
+
+            let spectrum_res = self._get_spectrum(spec_num, true, true).map(|(metadata_opt,data_opt)| {
+                MzMLSpectrum::new(metadata_opt.unwrap(), data_opt.unwrap())
+            });
+
+            queue.send(spectrum_res);
+        }
+
+        // Dropping the queue to signal that no more items will be sent
+        drop(queue);
+
+        Ok(())
+    }
+
+    pub fn get_spectrum(&self, number: u32) -> Result<MzMLSpectrum> {
+        MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
+
+        let (metadata_opt,data_opt) = self._get_spectrum(number, true, true)?;
+        let spectrum = MzMLSpectrum::new(metadata_opt.unwrap(), data_opt.unwrap());
+
+        Ok(spectrum)
+    }
+
+    pub fn get_spectrum_metadadata(&self, number: u32) -> Result<MzMLSpectrumMetaData> {
+        MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
+
+        self._get_spectrum(number, false, true).map(|tuple| tuple.0.unwrap())
+    }
+
+    pub fn get_spectrum_data(&self, number: u32) -> Result<SpectrumData> {
+        MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
+
+        self._get_spectrum(number, true, false).map(|tuple| tuple.1.unwrap())
+    }
+
+    // TODO: we may want to use something like realloc to maintain a single buffer instead of allocating memory every time
+    fn _get_spectrum(&self, number: u32, load_data: bool, load_metadata: bool) -> Result<(Option<MzMLSpectrumMetaData>,Option<SpectrumData>)> {
 
         if number < self.first_scan_number {
             bail!("requested spectrum number ({}) is lower than first scan number ({})", number, self.first_scan_number);
@@ -139,14 +218,23 @@ impl RawFileStreamer {
             ThermoRawFileParser_Writer_MzMlSpectrumWriter_ResetWriter(self.mzml_writer_ptr, false);
             ThermoRawFileParser_Writer_MzMlSpectrumWriter_WriteSpectrumNoReturn(self.mzml_writer_ptr, scan_number , scan_number, false);
 
-            let mzml_spectrum_meta_data = self._parse_spectrum_meta_data()?;
-            let mzml_spectrum_data = self._parse_spectrum_data()?;
+            let metadata_opt = if load_metadata {
+                Some(self._retrieve_spectrum_meta_data()?)
+            } else{
+                None
+            };
 
-            Ok((mzml_spectrum_meta_data, mzml_spectrum_data))
+            let data_opt = if load_data {
+                Some(self._retrieve_spectrum_data()?)
+            } else {
+                None
+            };
+
+            Ok((metadata_opt, data_opt) )
         }
     }
 
-    unsafe fn _parse_spectrum_meta_data(&self) -> Result<MzMLSpectrumMetaData> {
+    unsafe fn _retrieve_spectrum_meta_data(&self) -> Result<MzMLSpectrumMetaData> {
 
         let xml_chunk_len = ThermoRawFileParser_Writer_MzMlSpectrumWriter_FlushWriterThenGetXmlStreamLength(self.mzml_writer_ptr);
 
@@ -162,7 +250,7 @@ impl RawFileStreamer {
         //let xml_chunk = String::from_utf8(xml_chunk_bytes.to_vec())?;
         //println!("xml_chunk={}", xml_chunk);
 
-        let mzml_spectrum_metada_data = mzml_spectrum::parse_mzml_spectrum_header(xml_chunk)?;
+        let mzml_spectrum_metada_data = mzml_spectrum::parse_mzml_spectrum_metadata(xml_chunk)?;
 
         // Deallocate memory for XML chunk
         std::alloc::dealloc(xml_chunk_ptr as *mut u8, layout);
@@ -170,7 +258,7 @@ impl RawFileStreamer {
         Ok(mzml_spectrum_metada_data)
     }
 
-    unsafe fn _parse_spectrum_data(&self) -> Result<SpectrumData> {
+    unsafe fn _retrieve_spectrum_data(&self) -> Result<SpectrumData> {
 
         let peaks_count = ThermoRawFileParser_Writer_SpectrumWrapper_getPeaksCount(self.spectrum_wrapper_ptr) as usize;
 

@@ -71,9 +71,6 @@ pub fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
     let target_dir = out_dir.split("build").next().unwrap().to_string();
 
-    println!("cargo:rustc-link-search=native={}",target_dir);
-    println!("cargo:rustc-link-lib=static=ThermoRawFileParser");
-
     // Copy C# libraries in the target directory (skip if already there)
     fs_extra::dir::copy(
         RAW_FILE_PARSER_DIR,
@@ -119,10 +116,14 @@ pub fn main() {
         }
 
         // Copy Mono shared library to the target directory
+        // FIXME: we should use something more configurable (maybe MONO_HOME env var?)
         let mono_dll_path = Path::new(&target_dir).join("mono-2.0-sgen.dll");
         if mono_dll_path.exists() == false {
-            // FIXME: we should use something more configurable (maybe MONO_HOME env var?)
             fs::copy(r"C:\Program Files\Mono\bin\mono-2.0-sgen.dll", mono_dll_path.to_owned()).unwrap();
+        }
+        let mono_lib_path = Path::new(&target_dir).join("mono-2.0-sgen.lib");
+        if mono_lib_path.exists() == false {
+            fs::copy(r"C:\Program Files\Mono\lib\mono-2.0-sgen.lib", mono_lib_path.to_owned()).unwrap();
         }
     } else if cfg!(target_os = "linux") {
         // Copy Embeddinator glue code compiled as Linux shared library to the target directory
@@ -157,4 +158,7 @@ pub fn main() {
             .expect("Couldn't write bindings!");
     }
 
+    // --- Link native shared library (E4K glue code) --- //
+    println!("cargo:rustc-link-search=native={}",target_dir);
+    println!("cargo:rustc-link-lib=static=ThermoRawFileParser");
 }

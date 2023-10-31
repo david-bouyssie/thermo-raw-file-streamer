@@ -1,6 +1,6 @@
 
 use anyhow::*;
-use std::ffi::c_char;
+use std::ffi::{c_char, CString};
 use std::path::Path;
 use std::sync::Mutex;
 use lazy_static::lazy_static;
@@ -17,6 +17,9 @@ lazy_static! {
 pub struct MonoEmbeddinator {
     configured: bool,
     disposed: bool,
+    init_thread_id: u64,
+    assembly_path: Option<CString>,
+    runtime_assembly_path: Option<CString>
 }
 
 /*impl Drop for MonoEmbeddinator {
@@ -33,14 +36,27 @@ impl MonoEmbeddinator {
         Self {
             configured: false,
             disposed: false,
+            init_thread_id: 0,
+            assembly_path: None,
+            runtime_assembly_path: None
         }
     }
 
-    /*pub fn is_configured(&self) -> bool {
+    pub fn get_current_thread_id_as_u64() -> Result<u64> {
+        let raw_thread_id = format!("{:?}", std::thread::current().id());
+        //dbg!("raw_thread_id={} {}", raw_thread_id.clone(), std::thread::current().id());
+        let parsed_thread_id = raw_thread_id.trim_start_matches("ThreadId(")
+            .trim_end_matches(")")
+            .parse::<u64>()?;
+
+        Ok(parsed_thread_id)
+    }
+
+    pub fn is_configured(&self) -> bool {
         self.configured
     }
 
-    pub fn is_disposed(&self) -> bool {
+    /*pub fn is_disposed(&self) -> bool {
         self.disposed
     }*/
 
@@ -50,6 +66,11 @@ impl MonoEmbeddinator {
         }
         if self.disposed {
             bail!("Mono Embeddinator is disposed");
+        }
+
+        let cur_thread_id = MonoEmbeddinator::get_current_thread_id_as_u64()?;
+        if self.init_thread_id != cur_thread_id {
+            bail!("forbidden operation: Mono Embeddinator was initiated in thread '{}' but is now used from thread '{}'", self.init_thread_id, cur_thread_id);
         }
 
         Ok(())
@@ -64,64 +85,36 @@ impl MonoEmbeddinator {
             bail!("Mono Embeddinator can't be configured twice!");
         }
 
-        // Define Mono runtime location
-        /*let runtime_assembly_path = if cfg!(windows) {
-            let raw_file_parser_abs_dir = Path::new(&self.raw_file_parser_directory)
-                .canonicalize()?
-                .to_str()
-                .unwrap()
-                .replace('\\', "/") + "/";
-            raw_file_parser_abs_dir
-        } else {
-            get_mono_runtime_assembly_path_on_linux() + "/"
-        };
+        // Define Mono runtime location (note: missing ending slash prevents Mono to load properly)
+        let raw_file_parser_abs_dir = Path::new(&raw_file_parser_directory).absolutize()?
+            .to_string_lossy()
+            .to_string()
+            .replace('\\', "/") + "/";
 
-        let mono_directory_path = Path::new(&runtime_assembly_path).join("mono");
-        if !mono_directory_path.is_dir() {
-            bail!("can't find Mono runtime at '{}'", runtime_assembly_path)
-        }
+        self.assembly_path = Some(CString::new(raw_file_parser_abs_dir.clone())?);
 
         unsafe {
-            mono_embeddinator_set_assembly_path(runtime_assembly_path.as_ptr() as *const c_char);
+            mono_embeddinator_set_assembly_path(self.assembly_path.as_ref().unwrap().as_ptr() as *const c_char);
         }
 
-        let runtime_assembly_path_str = runtime_assembly_path.as_str();
-        if !Path::new(runtime_assembly_path_str).join("mono").is_dir() {
-            bail!( "can't find Mono runtime at '{}'", runtime_assembly_path);
-        }
-        */
-
-        // Define Mono runtime location (note: missing ending slash prevents Mono to load properly)
-        let runtime_assembly_path = if cfg!(windows) {
-
-            let raw_file_parser_abs_dir = Path::new(&raw_file_parser_directory).absolutize()?
-                .to_str()
-                .unwrap()
-                .replace('\\', "/") + "/";
-
-            raw_file_parser_abs_dir
-        } else {
+        let runtime_assembly_path = if cfg!(windows) {raw_file_parser_abs_dir}
+        else {
             MonoEmbeddinator::_get_mono_runtime_assembly_path_on_linux() + "/"
         };
 
         let mono_directory_path = Path::new(&runtime_assembly_path).join("mono");
         if !mono_directory_path.is_dir() {
-            bail!("can't find Mono runtime at '{}'", runtime_assembly_path)
+            bail!("can't find Mono runtime at '{:?}'", mono_directory_path)
         }
 
-        unsafe {
-            mono_embeddinator_set_assembly_path(runtime_assembly_path.as_ptr() as *const c_char);
-        }
-
-        let runtime_assembly_path_str = runtime_assembly_path.as_str();
-        if !Path::new(runtime_assembly_path_str).join("mono").is_dir() {
-            bail!( "can't find Mono runtime at '{}'", runtime_assembly_path);
-        }
+        self.runtime_assembly_path = Some(CString::new(runtime_assembly_path)?);
 
         // Set Mono runtime location
-        unsafe { mono_embeddinator_set_runtime_assembly_path(runtime_assembly_path_str.as_ptr() as *const c_char) }
+        unsafe { mono_embeddinator_set_runtime_assembly_path(self.runtime_assembly_path.as_ref().unwrap().as_ptr() as *const c_char) }
 
         self.configured = true;
+
+        self.init_thread_id = MonoEmbeddinator::get_current_thread_id_as_u64()?;
 
         Ok(())
     }
@@ -145,7 +138,11 @@ impl MonoEmbeddinator {
             //mono_assemblies_cleanup();
             //mono_runtime_cleanup(mono_domain_get());
             //mono_runtime_quit();
-            mono_jit_cleanup(mono_domain_get());
+
+            let mono_domain = mono_domain_get();
+            mono_jit_cleanup(mono_domain);
+            //mono_domain_free(mono_domain, 1);
+            //mono_domain_unload(mono_domain);
 
             // I think mono_embeddinator_destroy predicate is wrong (ctx->domain != 0)
             /*if mono_embeddinator_destroy(mono_embeddinator_get_context()) == 0 {
@@ -173,105 +170,4 @@ impl MonoEmbeddinator {
         }
     }
 }
-
-/*pub fn configure_mono_embeddinator(raw_file_parser_directory: &str) -> Result<()> {
-    unsafe {
-        if !mono_embeddinator_get_context().is_null() {
-            bail!("Mono Embeddinator can't be configured twice!")
-        }
-    }
-
-    unsafe { println!("mono_embeddinator_get_context={}", mono_embeddinator_get_context().is_null()) ; }
-
-    // Define Mono runtime location (note: missing ending slash prevents Mono to load properly)
-    let runtime_assembly_path = if cfg!(windows) {
-
-        let raw_file_parser_abs_dir = Path::new(raw_file_parser_directory).absolutize()?
-            .to_str()
-            .unwrap()
-            .replace('\\', "/") + "/";
-
-        raw_file_parser_abs_dir
-    } else {
-        get_mono_runtime_assembly_path_on_linux() + "/"
-    };
-
-    let mono_directory_path = Path::new(&runtime_assembly_path).join("mono");
-    if !mono_directory_path.is_dir() {
-        bail!("can't find Mono runtime at '{}'", runtime_assembly_path)
-    }
-
-    unsafe {
-        mono_embeddinator_set_assembly_path(runtime_assembly_path.as_ptr() as *const c_char);
-    }
-
-    let runtime_assembly_path_str = runtime_assembly_path.as_str();
-    if !Path::new(runtime_assembly_path_str).join("mono").is_dir() {
-        bail!( "can't find Mono runtime at '{}'", runtime_assembly_path);
-    }
-
-    // Set Mono runtime location
-    unsafe { mono_embeddinator_set_runtime_assembly_path(runtime_assembly_path_str.as_ptr() as *const c_char) }
-
-    // Initialize Mono Embeddinator
-    /*unsafe {
-        use std::alloc::{alloc, Layout, dealloc};
-
-        let size = std::mem::size_of::<mono_embeddinator_context_t>();
-        let align = std::mem::align_of::<mono_embeddinator_context_t>();
-        let layout = Layout::from_size_align(size, align).expect("Invalid layout");
-
-        // Allocate memory
-        let context_ptr = unsafe { alloc(layout) as *mut mono_embeddinator_context_t };
-
-        // Ensure the allocation was successful
-        if context_ptr.is_null() {
-            panic!("Failed to allocate memory.");
-        }
-
-        let domain_str = std::ffi::CString::new("mono_embeddinator_binding")?.as_ptr();
-        mono_embeddinator_init(context_ptr, domain_str);
-    }*/
-
-    unsafe { println!("mono_embeddinator_get_context={}", mono_embeddinator_get_context().is_null()) ; }
-
-    Ok(())
-
-}
-
-// Becareful, disposing the Mono JIT may prevent future use of code relying on Embeddinator-4000
-pub fn dispose_mono_embeddinator() -> Result<()> {
-    unsafe {
-        if mono_embeddinator_get_context().is_null() || mono_domain_get().is_null()  {
-            bail!("Mono JIT runtime has been initiated yet.");
-        }
-
-        // There are alternatives but it's not clear to me what is the best one
-        // For now let's take the same approache than Embeddinator-4000
-        //mono_assemblies_cleanup();
-        //mono_runtime_cleanup(mono_domain_get());
-        //mono_runtime_quit();
-        mono_jit_cleanup(mono_domain_get());
-
-        /*let null_ptr: *mut mono_embeddinator_context_t = std::ptr::null_mut();
-        mono_embeddinator_set_context(null_ptr);*/
-
-        /*let domain_str = std::ffi::CString::new("mono_embeddinator_binding")?.as_ptr();
-        mono_embeddinator_init(mono_embeddinator_get_context(), domain_str);
-
-        unsafe { println!("mono_embeddinator_get_context2={}", mono_embeddinator_get_context().is_null()) ; }*/
-
-        // Rset assembly and runtime assembly paths
-        mono_embeddinator_set_assembly_path(std::ptr::null());
-        mono_embeddinator_set_runtime_assembly_path(std::ptr::null());
-
-
-        // I think mono_embeddinator_destroy predicate is wrong (ctx->domain != 0)
-        /*if mono_embeddinator_destroy(mono_embeddinator_get_context()) == 0 {
-            bail!("can't call mono_embeddinator_destroy (undefined Mono context or domain)");
-        }*/
-
-        Ok(())
-    }
-}*/
 
