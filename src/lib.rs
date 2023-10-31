@@ -107,10 +107,17 @@ l" xmlns="http://psi.hupo.org/ms/mzml">
         assert_eq!(sample_number_param_opt.unwrap().value.as_ref().unwrap(), "1");
     }
 
+    const RAW_FILE_PARSER_PATH_STR: &'static str =
+        if cfg!(debug_assertions) {
+            "./target/debug/rawfileparser"
+        } else {
+            "./target/release/rawfileparser"
+        };
+
     // WARNING: it is not possible to run multiple tests because rust unit tests are started in different threads
     #[test]
     fn get_spectra() {
-        MONO_EMBEDDINATOR.lock().unwrap().configure("./target/debug/rawfileparser").expect("e4k config failed");
+        MONO_EMBEDDINATOR.lock().unwrap().configure(RAW_FILE_PARSER_PATH_STR).expect("e4k config failed");
 
         let streamer = RawFileStreamer::new("./resources/small.RAW").expect("streamer creation failed");
 

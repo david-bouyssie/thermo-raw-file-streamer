@@ -10,7 +10,6 @@ use crate::bindings::*;
 
 lazy_static! {
     pub static ref MONO_EMBEDDINATOR: Mutex<MonoEmbeddinator> = Mutex::new(MonoEmbeddinator::new());
-    //pub mut static ref MONO_EMBEDDINATOR: MonoEmbeddinator = MonoEmbeddinator::new();
 }
 
 #[derive(Clone, Debug)]
@@ -85,8 +84,14 @@ impl MonoEmbeddinator {
             bail!("Mono Embeddinator can't be configured twice!");
         }
 
+        let raw_file_parser_path = Path::new(&raw_file_parser_directory);
+
+        if raw_file_parser_path.is_dir() == false {
+            bail!("can't find the ThermoRawFileParser at '{}'", raw_file_parser_directory);
+        }
+
         // Define Mono runtime location (note: missing ending slash prevents Mono to load properly)
-        let raw_file_parser_abs_dir = Path::new(&raw_file_parser_directory).absolutize()?
+        let raw_file_parser_abs_dir = raw_file_parser_path.absolutize()?
             .to_string_lossy()
             .to_string()
             .replace('\\', "/") + "/";
