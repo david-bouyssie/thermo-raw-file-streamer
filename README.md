@@ -15,13 +15,13 @@ This C# interop is provided by the Mono embedding API and the C# glue code has b
 The C# code has been modified for optimal C# <-> foreign code (presently Rust) interoperability.
 The mzML meta-data and the spectra vectors are memory-allocated from the caller side, which has to reclaim first
 the number of bytes that needs to be allocated. So the caller has the responsibility of memory allocation/deallocation.
-The memory address and arrays length are sent to the C# code, and will be used to store the meta-data as XML UTF-8 strings and the (mz, intensity) data as numeric arrays.
+The memory address and arrays length are sent to the C# code, and then used to store the meta-data as XML UTF-8 strings and the (mz, intensity) data as numeric arrays.
 Hence, vectors of spectra values (mz, intensity) are treated in a way that avoids back and forth Base64 serialization round-trips, providing better performance.
 
 ## System Requirements
 This library currently works only on Linux and Windows, and requires Mono to be installed:
 * on Linux -> install mono-complete
-* on Windows -> choco install mono or perform manual installation [Mono for Windows](https://www.mono-project.com/download/stable/#download-win)
+* on Windows -> choco install mono or perform manual installation of [Mono for Windows](https://www.mono-project.com/download/stable/#download-win)
 
 
 
