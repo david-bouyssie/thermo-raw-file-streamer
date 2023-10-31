@@ -140,7 +140,7 @@ impl RawFileStreamer {
                     }*/
                 }
 
-                println!("All spectra have been processed!");
+                //println!("All spectra have been processed!");
 
                 ()
             });
@@ -167,7 +167,7 @@ impl RawFileStreamer {
         MONO_EMBEDDINATOR.lock().unwrap().check_availability()?;
 
         for spec_num in 1 ..= self.get_last_scan_number() {
-            println!("spec_num={}", spec_num);
+            //println!("spec_num={}", spec_num);
 
             let spectrum_res = self._get_spectrum(spec_num, true, true).map(|(metadata_opt,data_opt)| {
                 MzMLSpectrum::new(metadata_opt.unwrap(), data_opt.unwrap())
