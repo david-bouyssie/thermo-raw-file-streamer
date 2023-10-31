@@ -145,7 +145,7 @@ impl RawFileStreamer {
 
             drop(sender_queue);
 
-            processing_thread.join().or_else(Self::_downcast_thread_error);
+            processing_thread.join().or_else(Self::_downcast_thread_error)
         })?;
 
         Ok(())
